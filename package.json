@@ -1,6 +1,6 @@
 {
 	"name": "audio-encoder",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "encode audioBuffer to Wave or mp3",
 	"author": "Cedric Stoquer",
 	"repository": {
