@@ -34,7 +34,7 @@ function encodeWav(audioBuffer, cb) {
 	// 01 00           audio format
 	// 02 00           number of channels
 	// 22 56 00 00     sample rate
-	// 88 58 01 00     byte rate
+	// 88 58 01 00     bitrate
 	// 04 00           block align
 	// 10 00           bit per sample
 	// 64 61 74 61     d a t a
@@ -42,7 +42,7 @@ function encodeWav(audioBuffer, cb) {
 
 	var l2 = bufferLength * nChannels * 2; // subchunk2 = numSamples * numChannels * BitsPerSample / 8
 	var l1 = l2 + 36; // chunkSize = subchunk + 36
-	var br = 44100 * nChannels / 4 // byte rate = SampleRate * NumChannels * BitsPerSample / 8
+	var br = 44100 * nChannels * 2 // bitrate = SampleRate * NumChannels * BitsPerSample / 8
 
 	uint8.set([
 		// "RIFF" chunk descriptor
