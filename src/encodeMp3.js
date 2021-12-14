@@ -45,8 +45,8 @@ function encodeMp3(audioBuffer, params, onProgress, cb) {
 
 
 	// can be anything but make it a multiple of 576 to make encoders life easier
-	BLOCK_SIZE = 1152;
-	mp3encoder = new lamejs.Mp3Encoder(nChannels, 44100, bitrate);
+	var BLOCK_SIZE = 1152;
+	var mp3encoder = new lamejs.Mp3Encoder(nChannels, 44100, bitrate);
 	var mp3Data = [];
 
 	var blockIndex = 0;
@@ -57,8 +57,8 @@ function encodeMp3(audioBuffer, params, onProgress, cb) {
 			var chunk = buffers[0].subarray(blockIndex, blockIndex + BLOCK_SIZE);
 			mp3buf = mp3encoder.encodeBuffer(chunk);
 		} else {
-			chunkL = buffers[0].subarray(blockIndex, blockIndex + BLOCK_SIZE);
-			chunkR = buffers[1].subarray(blockIndex, blockIndex + BLOCK_SIZE);
+			var chunkL = buffers[0].subarray(blockIndex, blockIndex + BLOCK_SIZE);
+			var chunkR = buffers[1].subarray(blockIndex, blockIndex + BLOCK_SIZE);
 			var mp3buf = mp3encoder.encodeBuffer(chunkL, chunkR);
 		}
 
