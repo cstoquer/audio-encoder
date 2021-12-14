@@ -1,6 +1,6 @@
 {
 	"name": "audio-encoder",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "encode audioBuffer to Wave or mp3",
 	"author": "Cedric Stoquer",
 	"repository": {
@@ -19,7 +19,7 @@
 		"build": "webpack"
 	},
 	"dependencies": {
-		"lamejs": "1.2.0"
+		"lamejs": "1.2.1"
 	},
 	"devDependencies": {
 		"webpack": "^4.41.5",
